@@ -20,7 +20,7 @@ app.use(cors())
 //routes
 const api = require('./routes/index')
 
-app.use('/api', api)
+//app.use('/api', api)
 
 app.listen(4002, function(err){
   if(!err) console.log('server listen on port | 4500')
