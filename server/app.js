@@ -12,13 +12,13 @@ app.use(bodyParser.json())
 // mongoose connect
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/siriusProject')
-.then(() =>  console.log('db connection succesful'))
+.then(() =>  console.log('db connection succesfull'))
 .catch((err) => console.error(err));
 
 //routes
-const users = require('./routes/user')
+const users = require('./routes/api_user')
 
-app.use('/api/users', users)
+app.use('/api', users)
 
 app.listen(3000, function(err){
   if(!err) console.log('server listen on port | 3000')
