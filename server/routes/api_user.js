@@ -4,6 +4,6 @@ const verify = require('../middleware/islogin')
 const router = express.Router()
 
 router.get('/users', Users.getAllUsers)
-router.post('/users/register', Users.createUser)
+router.post('/users/register', Users.createUserViaRegister)
 
 module.exports = router

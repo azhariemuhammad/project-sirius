@@ -35,7 +35,32 @@ const getAllUsers = function(req,res){
   })
 }
 
+const createUserViaRegister = function(req, res){
+  const saltRounds = 10
+  bcrypt.hash(req.body.input_password, saltRounds).then(function(hash){
+    let newUser = User({
+      name : req.body.input_name,
+      username : req.body.input_username,
+      email : req.body.input_email,
+      password : hash,
+      via : 'register'
+    })
+    newUser.save().then(function(data){
+      console.log(data)
+      res.status(201).send(data)
+      console.log('User Created Via Register')
+    }).catch(function(err){
+      res.status(500).send(err)
+      console.log(err)
+    })
+  }).catch(function(err){
+    res.status(500).send(err)
+    console.log('password crypt', err)
+  })
+}
+
 module.exports = {
   createUser,
-  getAllUsers
+  getAllUsers,
+  createUserViaRegister
 }
