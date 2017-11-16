@@ -50,16 +50,16 @@ li a:hover:not(.active) {
 			font-size: 30px;
 		}
 
-    .container{
+    .container_myStyle{
       margin-top: 13px;
 			max-width: 777px;
 			margin: 10% auto 0 auto;
 		}
 
-    .container_login{
-      margin-top: 13px;
-			max-width: 333px;
-			margin: 10% auto 0 auto;
+    .containerCust{
+			max-width: 650px;
+			margin: auto;
+			width: 460px;
 		}
 
 		#content{

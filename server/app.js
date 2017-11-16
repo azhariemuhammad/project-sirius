@@ -16,9 +16,9 @@ mongoose.connect('mongodb://localhost/siriusProject')
 .catch((err) => console.error(err));
 
 //routes
-const index = require('./routes/index')
+const users = require('./routes/user')
 
-app.use('/', index)
+app.use('/api/users', users)
 
 app.listen(3000, function(err){
   if(!err) console.log('server listen on port | 3000')

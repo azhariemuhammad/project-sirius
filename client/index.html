@@ -6,10 +6,85 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
-  <script>
+  <div class="container_myStyle">
+    <div class="containerCust">
+      
+      <div class="" style="padding-top: 16%;">
+        <!--notification-->
+        <div class="notification">
+          <button class="delete"></button>
+          <div id="status">
+          </div>
+        </div>
+        <!--login form-->
+        <div>
+          <div class="field">
+            <p class="control has-icons-left has-icons-right">
+              <input class="input" type="text" placeholder="Username">
+              <span class="icon is-small is-left">
+                <i class="fa fa-user"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control has-icons-left">
+              <input class="input" type="password" placeholder="Password">
+              <span class="icon is-small is-left">
+                <i class="fa fa-lock"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control">
+              <button style="width: 100%;" class="button is-info">
+                Login
+              </button>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control">
+              <hr>
+            </p>
+          </div>
+          <!--login facebook-->
+          <div class="field">
+            <p class="control">
+              <button id="fbLogin" onclick="FBlogin()" style="width: 100%;" class="button is-link">
+                <span class="icon">
+                  <i class="fa fa-facebook-official"></i>
+                </span>
+                <span>login with facebook</span>
+              </button>
+            </p>
+          </div>
+          <div style="padding-top:5%;" class="field">
+            <p class="control">
+                <p style="text-align: center; font-size:13px;">Lost password? <a href="#">change password</a> or <a href="http://localhost:8080/register.html">Signup</a></p>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+  </fb:login-button> -->
+  <!-- <div class="notification">
+    <button class="delete"></button>
+    <div id="status">
+    </div>
+  </div> -->
+
+</body>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+crossorigin="anonymous"></script>
+<script>
+  
+
     // This is called with the results from from FB.getLoginStatus().
     function statusChangeCallback(response) {
       console.log('statusChangeCallback');
@@ -95,12 +170,26 @@
         console.log(response)
         if (response.status === 'connected') {
           // Logged into your app and Facebook.
-          window.location = "http://localhost:8080/main-page.html"
+          // window.location = "http://localhost:8080/main-page.html"
         } else {
           // The person is not logged into this app or we are unable to tell. 
         }
       });
     }
+
+    // start send data login
+    $(document).ready(function(){
+      $('button#fbLogin').click(function(){
+        console.log('this response >>>', response.name)
+        $.ajax({
+          url : url,
+          method : 'POST',
+          dataType : 'JSON',
+          data : response.name
+        })
+      })
+    })
+  // end send data login
   </script>
 
   <!--
@@ -108,71 +197,4 @@
   the JavaScript SDK to present a graphical Login button that triggers
   the FB.login() function when clicked.
 -->
-
-  <div class="columns is-mobile">
-    <div class="column is-three-fifths is-offset-one-fifth">
-      
-      <div class="" style="padding-top: 36%;">
-        <!--notification-->
-        <div class="notification">
-          <button class="delete"></button>
-          <div id="status">
-          </div>
-        </div>
-        <!--login form-->
-        <div>
-          <div class="field">
-            <p class="control has-icons-left has-icons-right">
-              <input class="input" type="text" placeholder="Username">
-              <span class="icon is-small is-left">
-                <i class="fa fa-user"></i>
-              </span>
-            </p>
-          </div>
-          <div class="field">
-            <p class="control has-icons-left">
-              <input class="input" type="password" placeholder="Password">
-              <span class="icon is-small is-left">
-                <i class="fa fa-lock"></i>
-              </span>
-            </p>
-          </div>
-          <div class="field">
-            <p class="control">
-              <button style="width: 100%;" class="button is-info">
-                Login
-              </button>
-            </p>
-          </div>
-          <div class="field">
-            <p class="control">
-              <hr>
-            </p>
-          </div>
-          <!--login facebook-->
-          <div class="field">
-            <p class="control">
-              <button onclick="FBlogin()" style="width: 100%;" class="button is-link">
-                <span class="icon">
-                  <i class="fa fa-facebook-official"></i>
-                </span>
-                <span>login with facebook</span>
-              </button>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-  </fb:login-button> -->
-  <!-- <div class="notification">
-    <button class="delete"></button>
-    <div id="status">
-    </div>
-  </div> -->
-
-</body>
-
 </html>
