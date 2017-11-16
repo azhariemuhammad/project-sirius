@@ -7,7 +7,14 @@
   <title>sirius project</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 </head>
+<style>
+  #map {
+    height: 500px;
+    width: 80%;
+   }
+</style>
 <body>
   <h4>Astronomy photo of the day</h4>
 
@@ -16,12 +23,46 @@
 
     </div>
 
-    <div id="issPos">
+    <div class="getLocation">
 
     </div>
+    <h3>Satelite Position</h3>
+    <div id="map"></div>
+
+
 </body>
 <script src="main.js" charset="utf-8"></script>
-<script type="text/javascript">
 
-</script>
+<script>
+
+    function initMap() {
+      axios.get(`http://api.open-notify.org/iss-now.json`)
+      .then(({data}) => {
+        let latitude = data.iss_position.latitude
+        let longitude = data.iss_position.longitude
+        console.log(latitude, longitude);
+        var uluru = {lat: +latitude, lng: +longitude};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+    })
+      .catch(function (error) {
+        console.log(error);
+      })
+   }
+
+   window.setInterval(function() {
+     initMap()
+   }, 30000)
+
+    </script>
+
+
+
+    <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8cP5-Hw2zY1clm1YCZBfOIoxWBYCLxfM&callback=initMap" async defer> </script>
 </html>
