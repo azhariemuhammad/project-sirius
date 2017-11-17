@@ -170,7 +170,7 @@ crossorigin="anonymous"></script>
         console.log(response)
         if (response.status === 'connected') {
           // Logged into your app and Facebook.
-          // window.location = "http://localhost:8080/main-page.html"
+          window.location = "http://localhost:8080/main-page.html"
         } else {
           // The person is not logged into this app or we are unable to tell. 
         }
@@ -178,17 +178,16 @@ crossorigin="anonymous"></script>
     }
 
     // start send data login
-    $(document).ready(function(){
-      $('button#fbLogin').click(function(){
-        console.log('this response >>>', response.name)
-        $.ajax({
-          url : url,
-          method : 'POST',
-          dataType : 'JSON',
-          data : response.name
-        })
-      })
-    })
+    // $(document).ready(function(){
+    //   $('button#fbLogin').click(function(){
+    //     $.ajax({
+    //       url : url,
+    //       method : 'POST',
+    //       dataType : 'JSON',
+    //       data : response.name
+    //     })
+    //   })
+    // })
   // end send data login
   </script>
 

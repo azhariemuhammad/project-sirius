@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken')
 require('dotenv').config()
 const secret = process.env.secretKey
 
-const createUser = function(req, res){
+const createUserViaFb = function(req, res){
   const saltRounds = 10
   bcrypt.hash(req.body.password, saltRounds).then(function(hash){
     let newUser = User({
@@ -59,8 +59,12 @@ const createUserViaRegister = function(req, res){
   })
 }
 
+// const signinUsers = function(req,re){
+//   User.find().then().catch()
+// }
+
 module.exports = {
-  createUser,
+  createUserViaFb,
   getAllUsers,
   createUserViaRegister
 }
