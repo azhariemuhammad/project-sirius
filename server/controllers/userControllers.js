@@ -59,12 +59,39 @@ const createUserViaRegister = function(req, res){
   })
 }
 
-// const signinUsers = function(req,re){
-//   User.find().then().catch()
-// }
+const loginUsers = function(req,res){
+  User.find({username:req.body.input_username}).then(function(data_User){
+    if(data_User){
+      bcrypt.compare(req.body.input_password, data_User[0].password).then(function(result){
+        if(result){
+          console.log(data_User[0])
+          jwt.sign({
+            id : data_User[0].id,
+            username : data_User[0].username
+          }, secret, function(err, token) {
+            if(!err){
+              console.log('this token >>', token)
+              res.status(201).send({
+                success: true,
+                message: 'Enjoy your token!',
+                token: token
+              })
+            }
+          })
+        }
+      })
+    }
+  }).catch(function(err){
+    if(err){
+      res.status(500).send(err)
+      console.log(err)
+    }
+  })
+}
 
 module.exports = {
   createUserViaFb,
   getAllUsers,
+  loginUsers,
   createUserViaRegister
 }
