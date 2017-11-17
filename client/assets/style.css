@@ -39,8 +39,10 @@ li a:hover:not(.active) {
 		}
 
 		body{
-			font-family: Arial;
+			font-family: 'Rajdhani', sans-serif;
+
 		}
+
 
 		header{
 			color: #888;
@@ -48,7 +50,27 @@ li a:hover:not(.active) {
 
 		header h1{
 			font-size: 30px;
+
 		}
+
+    h4 {
+      font-family: 'PT Sans Caption', sans-serif;
+      font-size: 30px;
+      margin-top: 4%;
+      margin-left: 13%;
+    }
+    .satelite {
+      background-color: #00b1ff
+    }
+    .footer {
+      margin-top: 20%;
+      background-color: #209cee;
+      color: #fff;
+    }
+    p {
+      padding-right: 20px;
+      font-size: 16px;
+    }
 
     .container_myStyle{
       margin-top: 13px;
@@ -62,6 +84,14 @@ li a:hover:not(.active) {
 			width: 460px;
 		}
 
+    .photo {
+      margin-top: 7%;
+    }
+
+
+    #date {
+      padding-bottom: 3%;
+    }
 		#content{
 			border: 2px dotted green;
 			padding: 18px;

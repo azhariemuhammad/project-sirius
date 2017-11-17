@@ -4,9 +4,15 @@
        .then(({data}) => {
          console.log(data);
          $('#getPhoto').append(
-           `<p>${data.date}</p>
-           <img src=${data.url} style="">
-           <p>${data.explanation}</p>`
+           `<p id="date">${data.date}</p>
+           <figure class="image is-256x256">
+          <img src=${data.url}>
+            </figure>
+
+
+           <div class="photo">
+           <p>${data.explanation}</p>
+           </div>`
          )
        })
        .catch(function (error) {
