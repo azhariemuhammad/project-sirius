@@ -20,7 +20,7 @@ app.use(cors())
 // .catch((err) => console.error(err));
 
 //routes
-const api = require('./routes/index')
+//const api = require('./routes/index')
 
 //app.use('/api', api)
 
