@@ -74,7 +74,8 @@ const loginUsers = function(req,res){
               res.status(201).send({
                 success: true,
                 message: 'Enjoy your token!',
-                token: token
+                token: token,
+                username: data_User[0].name
               })
             }
           })
