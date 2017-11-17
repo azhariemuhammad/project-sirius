@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "nodemon app.js"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,9 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "fb": "^2.0.0",
+    "leaflet": "^1.2.0",
+    "leaflet-map": "^0.2.1",
     "mongoose": "^4.13.3",
     "morgan": "^1.9.0",
     "oauth": "^0.9.15"
