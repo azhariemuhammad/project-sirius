@@ -20,8 +20,6 @@ mongoose.connect('mongodb://localhost/siriusProject')
 
 //routes
 const users = require('./routes/api_user')
-
-
 app.use('/api', users)
 
 app.listen(3000, function(err){
