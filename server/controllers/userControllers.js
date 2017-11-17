@@ -67,4 +67,5 @@ module.exports = {
   createUserViaFb,
   getAllUsers,
   createUserViaRegister
+
 }

@@ -8,29 +8,24 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+  <link rel="stylesheet" href="assets/style.css">
 </head>
-<style>
-  #map {
-    height: 500px;
-    width: 80%;
-   }
-</style>
+
 <body>
-  <h4>Astronomy photo of the day</h4>
-
-
-    <div id="getPhoto">
-
+  <div class="container">
+    <div class="notification">
+      <div id="getPhoto">
+        <div class="getLocation">
+        </div>
+      </div>
+      <h3>Satelite Position</h3>
+      <div id="map"></div>
     </div>
-
-    <div class="getLocation">
-
-    </div>
-    <h3>Satelite Position</h3>
-    <div id="map"></div>
-
-
+  </div>
 </body>
+
 <script src="main.js" charset="utf-8"></script>
 
 <script>
