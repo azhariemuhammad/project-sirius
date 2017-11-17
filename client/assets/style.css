@@ -2,6 +2,7 @@ body {margin:0;}
 #map {
   height: 500px;
   width: 100%;
+  margin-top: 4%;
  }
 
 ul {
@@ -66,7 +67,7 @@ li a:hover:not(.active) {
       background-color: #00b1ff
     }
     .footer {
-      margin-top: 20%;
+      margin-top: 10%;
       background-color: #209cee;
       color: #fff;
     }

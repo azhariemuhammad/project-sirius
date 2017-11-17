@@ -70,9 +70,9 @@
 
   </div>
   <div class="section is-medium">
-    <div class="container">
-      <h3>Satelite Position: ISS ZARYA</h3>
-      <label id=lat>
+    <div style="text-align:center;" class="container">
+      <h3 class="subtitle is-3">Satelite Position: ISS ZARYA</h3>
+      <label class="subtitle is-5" id=lat>
 
       </label>
 
@@ -86,7 +86,7 @@
     <div class="container">
       <div class="content has-text-centered">
         <p>
-          <strong style="color:white;">PROJECT SIRIUS</strong> by Azharie-Adhit-Ilham
+          <strong style="color:white;">experimental</strong> | sirius project | nasa & iss
         </p>
       </div>
     </div>
@@ -110,13 +110,13 @@
         let solar_lon = data.solar_lon
         console.log(latitude, longitude);
         $('#lat').html(
-          `<p>LATITUDE  : ${latitude}<p>
+          `<p style="font-weight:bold">LATITUDE  : ${latitude}<p>
            <p>LONGITUDE : ${longitude}<p>
-           <p>ALITITUDE : ${altitude}<p>
+           <p style="font-weight:bold">ALITITUDE : ${altitude}<p>
            <p>VELOCITY  : ${velocity}<p>
-           <p>VISIBILITY: ${visibility}<p>
+           <p style="font-weight:bold">VISIBILITY: ${visibility}<p>
            <p>SOLAR_LAT: ${solar_lat}<p>
-           <p>SOLAR_LON: ${solar_lon}<p>`
+           <p style="font-weight:bold">SOLAR_LON: ${solar_lon}<p>`
         )
 
         var uluru = {
