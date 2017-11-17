@@ -8,8 +8,6 @@
            <figure class="image is-256x256">
           <img src=${data.url}>
             </figure>
-
-
            <div class="photo">
            <p>${data.explanation}</p>
            </div>`
