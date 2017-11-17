@@ -19,12 +19,7 @@ mongoose.connect('mongodb://localhost/siriusProject')
 .catch((err) => console.error(err));
 
 //routes
-<<<<<<< HEAD
-//const api = require('./routes/index')
-=======
 const users = require('./routes/api_user')
->>>>>>> 0e15f70316c07f073a1fd424c8af08bea379c2a4
-
 app.use('/api', users)
 
 app.listen(3000, function(err){
