@@ -22,6 +22,6 @@ const api = require('./routes/index')
 
 //app.use('/api', api)
 
-app.listen(4002, function(err){
-  if(!err) console.log('server listen on port | 4500')
+app.listen(3000, function(err){
+  if(!err) console.log('server listen on port | 3000')
 })
