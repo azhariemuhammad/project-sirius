@@ -19,7 +19,7 @@
    }
 </style>
 <body>
-
+    <button onclick="logout()" >quit</button>
     <h4>Astronomy photo of the day</h4>
 
     <div class="container">
@@ -85,6 +85,13 @@
      initMap()
    }, 30000)
 
+  // cek condition storage
+  let storage = localStorage.getItem('token')
+   if(storage === null){
+    console.log('<<<', storage)
+    window.location = "http://localhost:8080/login.html"
+    }
+    console.log('>>>', storage)
     </script>
 
 

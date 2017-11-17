@@ -19,3 +19,16 @@
          console.log(error);
        })
     })
+
+    // START FACEBOOK
+    let status = true
+    function logout(){
+      // FB.logout(function(response) {
+      //   window.location = "http://localhost:8080/login.html"
+      // });
+      status = false
+      localStorage.removeItem('token')
+      window.location = "http://localhost:8080/login.html"
+    }
+
+    
