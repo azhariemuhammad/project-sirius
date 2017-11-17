@@ -12,7 +12,7 @@
 <body>
   <div class="container_myStyle">
     <div class="containerCust">
-      
+
       <div class="" style="padding-top: 16%;">
         <!--notification-->
         <div class="notification">
@@ -83,7 +83,7 @@
 <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 crossorigin="anonymous"></script>
 <script>
-  
+
 
     // This is called with the results from from FB.getLoginStatus().
     function statusChangeCallback(response) {
@@ -115,13 +115,13 @@ crossorigin="anonymous"></script>
     window.fbAsyncInit = function () {
       FB.init({
         appId: '1565142446894666',
-        cookie: true, // enable cookies to allow the server to access 
+        cookie: true, // enable cookies to allow the server to access
         // the session
         xfbml: true, // parse social plugins on this page
         version: 'v2.8' // use graph api version 2.8
       });
 
-      // Now that we've initialized the JavaScript SDK, we call 
+      // Now that we've initialized the JavaScript SDK, we call
       // FB.getLoginStatus().  This function gets the state of the
       // person visiting this page and can return one of three states to
       // the callback you provide.  They can be:
@@ -172,7 +172,7 @@ crossorigin="anonymous"></script>
           // Logged into your app and Facebook.
           window.location = "http://localhost:8080/main-page.html"
         } else {
-          // The person is not logged into this app or we are unable to tell. 
+          // The person is not logged into this app or we are unable to tell.
         }
       });
     }
