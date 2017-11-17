@@ -4,12 +4,14 @@
        .then(({data}) => {
          console.log(data);
          $('#getPhoto').append(
-           `<p id="date">${data.date}</p>
+           `<p id="date">Created at: ${data.date}</p>
            <figure class="image is-256x256">
           <img src=${data.url}>
             </figure>
+
+
            <div class="photo">
-           <p>${data.explanation}</p>
+           <p class="subtitle is-4">${data.explanation}</p>
            </div>`
          )
        })
@@ -17,3 +19,11 @@
          console.log(error);
        })
     })
+
+    // START FACEBOOK
+    function logout(){
+      localStorage.removeItem('token')
+      window.location = "http://localhost:8080/login.html"
+    }
+
+    
